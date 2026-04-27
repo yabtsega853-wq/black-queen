@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Black Queen Beauty Salon | Premium Beauty Services in Addis Ababa</title>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0D0D0D;
+            color: #E8E3D9;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #D4AF37;
+            /* gold/royal */
+            --primary-dark: #B8960F;
+            --primary-light: #F5E6B8;
+            --secondary: #8B7355;
+            /* bronze */
+            --accent: #C0A080;
+            --black: #0A0A0A;
+            --dark-gray: #1A1A1A;
+            --light-bg: #FFFFFF;
+            --card-bg: #141414;
+            --gray-mid: #A89880;
+            --gray-soft: #C4B8A8;
+            --border-light: #2A2A2A;
+            --card-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.3);
+            --hover-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.4);
+            --gold-glow: 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* typography */
+        h1,
+        h2,
+        h3,
+        .logo,
+        .section-title,
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* header nav */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.96);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1rem 0;
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--primary);
+            font-weight: 900;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #E8E3D9;
+            transition: color 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--black);
+            font-weight: 600;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--primary);
+            color: var(--primary);
+            padding: 0.65rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--black);
+            transform: translateY(-2px);
+        }
+
+        /* hero section */
+        .hero {
+            position: relative;
+            padding: 100px 0 120px;
+            border-radius: 0 0 48px 48px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0A0A0A 0%, #1A1512 100%);
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.03"><path fill="none" stroke="%23D4AF37" stroke-width="0.5" d="M30,30 L40,30 L35,38 Z M60,50 L70,50 L65,58 Z M20,70 L30,70 L25,78 Z"/><circle cx="50" cy="20" r="4" fill="%23D4AF37"/><circle cx="80" cy="40" r="3" fill="%23D4AF37"/><path d="M70,80 L75,85 L80,80" stroke="%23D4AF37" fill="none"/></svg>');
+            background-repeat: repeat;
+            background-size: 80px;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-badge {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--black);
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+            color: white;
+        }
+
+        .hero-highlight {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: var(--gray-soft);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            flex: 1;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.02);
+        }
+
+        /* section titles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        .section-sub {
+            text-align: center;
+            color: var(--gray-mid);
+            margin-bottom: 3rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* service cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.35s ease;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+            font-size: 1.8rem;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--primary);
+            color: var(--black);
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            color: white;
+        }
+
+        .service-card p {
+            color: var(--gray-mid);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        /* gallery section */
+        .gallery-page {
+            background: var(--card-bg);
+            padding: 60px 0;
+            border-radius: 48px;
+            margin: 40px 0;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 1 / 1;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item:hover::after {
+            content: "👑";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            color: var(--primary);
+        }
+
+        /* lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 16px;
+            border: 2px solid var(--primary);
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+
+        .lightbox .close:hover {
+            color: var(--primary);
+        }
+
+        .lightbox .caption {
+            color: white;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* video section */
+        .video-gallery {
+            background: var(--card-bg);
+            padding: 60px 0;
+            border-radius: 48px;
+            margin: 40px 0;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        .video-card {
+            background: var(--black);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .video-card video {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .video-card .video-caption {
+            padding: 1rem;
+            text-align: center;
+            color: var(--gray-soft);
+            font-size: 0.85rem;
+        }
+
+        /* about section */
+        .about {
+            background-color: var(--card-bg);
+            padding: 70px 0;
+            border-radius: 48px;
+            margin: 40px 0;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .about-flex {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            color: white;
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+        }
+
+        .about-text p {
+            color: var(--gray-soft);
+            margin-bottom: 1rem;
+        }
+
+        .about-quote {
+            font-style: italic;
+            color: var(--primary);
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 20px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 48px;
+            margin-top: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .info-card {
+            background: var(--black);
+            padding: 1.8rem;
+            border-radius: 28px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: var(--gold-glow);
+        }
+
+        .info-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .info-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .info-card p {
+            color: var(--gray-soft);
+        }
+
+        .call-wa-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .socials a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 1.3rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .socials a:hover {
+            background: var(--primary);
+            color: var(--black);
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        .crown-icon {
+            color: var(--primary);
+            margin-top: 0.5rem;
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        footer {
+            background: #050505;
+            color: var(--gray-mid);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-radius: 32px 32px 0 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-grid {
+                text-align: center;
+            }
+
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .about-stats {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <div class="logo">BLACK <span>QUEEN</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery-page">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:+251932995151" class="btn-primary">👑 Book Now</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero section -->
+        <section id="home" class="hero">
+            <div class="hero-pattern"></div>
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">👑 Royal Beauty & Elegance</div>
+                    <h1>Wear Your <span class="hero-highlight">Crown</span> <br>With Confidence</h1>
+                    <p class="hero-desc">Black Queen Beauty Salon — where regal beauty meets professional excellence.
+                        Premium makeup, eyelash extensions, nail care, and hair styling in Addis Ababa.</p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn-primary">Explore Royal Services →</a>
+                        <a href="https://wa.me/251932995151" class="btn-outline"><i class="fab fa-whatsapp"></i>
+                            WhatsApp</a>
+                    </div>
+                    <div class="crown-icon">
+                        <i class="fas fa-crown"></i> Every Queen deserves the best
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=600&h=500&fit=crop"
+                        alt="Black Queen Beauty Salon">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services section -->
+        <section id="services" class="container" style="margin-top: 60px;">
+            <h2 class="section-title">Royal <span>Services</span></h2>
+            <p class="section-sub">Fit for a Queen</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-crown"></i></div>
+                    <h3>Makeup Artistry</h3>
+                    <p>Bridal, evening, photoshoot, and airbrush makeup by professional artists.</p>
+                    <div class="price">From 800 ETB</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Eyelash Extensions</h3>
+                    <p>Classic, volume, and hybrid lashes for a stunning, natural look.</p>
+                    <div class="price">From 500 ETB</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-hand-sparkles"></i></div>
+                    <h3>Nail Care</h3>
+                    <p>Manicure, pedicure, gel polish, acrylics, and royal nail art designs.</p>
+                    <div class="price">From 350 ETB</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cut"></i></div>
+                    <h3>Hair Styling</h3>
+                    <p>Cut, color, highlights, keratin treatments, and special occasion styling.</p>
+                    <div class="price">From 450 ETB</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-feather-alt"></i></div>
+                    <h3>Waxing Services</h3>
+                    <p>Professional waxing for smooth, flawless skin.</p>
+                    <div class="price">From 250 ETB</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-face-smile"></i></div>
+                    <h3>Facial Treatments</h3>
+                    <p>Deep cleansing, brightening, and anti-aging facials.</p>
+                    <div class="price">From 550 ETB</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery-page" class="gallery-page">
+            <div class="container">
+                <h2 class="section-title">Regal <span>Gallery</span></h2>
+                <p class="section-sub">Witness the transformation</p>
+                <div class="gallery-grid" id="galleryGrid"></div>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img id="lightboxImg" src="" alt="">
+            <div class="caption" id="lightboxCaption"></div>
+        </div>
+
+        <!-- Video Gallery -->
+        <section class="video-gallery">
+            <div class="container">
+                <h2 class="section-title">Royal <span>Artistry</span></h2>
+                <p class="section-sub">See the queen in you emerge</p>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <video controls
+                            poster="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=400&h=240&fit=crop">
+                            <source src="https://cdn.pixabay.com/video/2023/06/20/169525-836306941_tiny.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-caption">💇‍♀️ Professional Hair Styling</div>
+                    </div>
+                    <div class="video-card">
+                        <video controls
+                            poster="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&h=240&fit=crop">
+                            <source src="https://cdn.pixabay.com/video/2023/05/18/165883-826867451_tiny.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-caption">👑 Makeup & Lash Extensions</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About section -->
+        <section id="about" class="about">
+            <div class="container about-flex">
+                <div class="about-text">
+                    <h3>About Black Queen</h3>
+                    <p>Black Queen Beauty Salon is a premier destination for luxury beauty services in Addis Ababa.
+                        Located at Summit Fiyelbet, near Semit Burgerizza, we offer a regal experience where every
+                        client is treated like royalty.</p>
+                    <p>Our team of certified professionals uses only premium products to ensure you leave feeling
+                        beautiful, confident, and ready to wear your crown.</p>
+                    <div class="about-quote">
+                        <i class="fas fa-crown"></i> "Every queen deserves to feel beautiful. We're here to make that
+                        happen."
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div>Happy Queens</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">8+</div>
+                            <div>Expert Artists</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">20+</div>
+                            <div>Royal Services</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <strong>⏰ Opening Hours:</strong> Mon–Sun 8:00 AM – 7:00 PM<br>
+                        <span style="font-size: 0.85rem;">(Thursday open until midnight)</span>
+                    </div>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&h=400&fit=crop"
+                        alt="Black Queen Beauty Salon">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact section -->
+        <section id="contact" class="container" style="margin-bottom: 60px;">
+            <h2 class="section-title">Get in <span>touch</span></h2>
+            <div class="contact-grid">
+                <div class="info-card">
+                    <i class="fas fa-location-dot"></i>
+                    <h4>👑 Visit the Queen</h4>
+                    <p>Summit, Fiyelbet<br>Addis Ababa, Ethiopia</p>
+                    <p style="margin-top: 0.5rem;">📍 Near Semit Burgerizza, 2nd Floor</p>
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5!2d38.78!3d9.02!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDEnMTIuMCJOIDM4wrA0Nic4MC4wIkU!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set"
+                            width="100%" height="150" style="border:0; border-radius: 16px;" allowfullscreen=""
+                            loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-phone"></i>
+                    <h4>📞 Call the Royal Court</h4>
+                    <p><a href="tel:+251932995151" style="color: var(--primary); text-decoration: none;">+251 93 299
+                            5151</a></p>
+                    <p><a href="tel:+251703831301" style="color: var(--primary); text-decoration: none;">+251 70 383
+                            1301</a></p>
+                    <div class="call-wa-group">
+                        <a href="tel:+251932995151" class="btn-primary">📞 Call</a>
+                        <a href="https://wa.me/251932995151" class="btn-outline"><i class="fab fa-whatsapp"></i>
+                            WhatsApp</a>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <h4>👑 Hours of Royal Service</h4>
+                    <p>Monday – Sunday: 8:00 AM – 7:00 PM</p>
+                    <p>Thursday: 8:00 AM – 12:00 AM (Midnight)</p>
+                    <p>✅ Walk-ins welcome, appointments recommended</p>
+                    <div class="socials">
+                        <a href="https://instagram.com/blackqueenbeauty" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com/@blackqueenbeauty" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com/@blackqueenbeauty" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 <strong>Black Queen Beauty Salon</strong> | ብላክ ኩዊን — Where Every Woman is a Queen</p>
+        <p>📍 Summit, Fiyelbet, Addis Ababa | 📞 +251 93 299 5151 | 👑 Wear Your Crown With Confidence</p>
+    </footer>
+
+    <script>
+        // ============================================
+        // 👑 EASY IMAGE MANAGEMENT - EDIT THIS ARRAY
+        // ============================================
+
+        const galleryImages = [
+            {
+                url: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&h=600&fit=crop",
+                title: "Royal Hair Styling",
+                description: "Professional hair cutting and coloring services fit for a queen"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=600&h=600&fit=crop",
+                title: "Makeup Artistry",
+                description: "Bridal and special occasion makeup"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=600&fit=crop",
+                title: "Eyelash Extensions",
+                description: "Stunning lashes for a dramatic look"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=600&fit=crop",
+                title: "Salon Interior",
+                description: "Elegant and regal atmosphere"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=600&h=600&fit=crop",
+                title: "Royal Nail Care",
+                description: "Manicure, pedicure, and nail art"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop",
+                title: "Facial Treatment",
+                description: "Customized facials for glowing skin"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&h=600&fit=crop",
+                title: "Relaxation Area",
+                description: "Peaceful environment for royalty"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&h=600&fit=crop",
+                title: "Ready for the Crown",
+                description: "Our signature bridal package"
+            }
+        ];
+
+        // Render gallery
+        function renderGallery() {
+            const galleryGrid = document.getElementById('galleryGrid');
+            if (!galleryGrid) return;
+
+            galleryGrid.innerHTML = '';
+
+            galleryImages.forEach((image, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.innerHTML = `<img src="${image.url}" alt="${image.title}" loading="lazy">`;
+                galleryItem.onclick = () => openLightbox(index);
+                galleryGrid.appendChild(galleryItem);
+            });
+        }
+
+        // Lightbox
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+
+            lightbox.classList.add('active');
+            lightboxImg.src = galleryImages[index].url;
+            lightboxCaption.innerHTML = `<strong>👑 ${galleryImages[index].title}</strong><br>${galleryImages[index].description}`;
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        document.querySelector('.close')?.addEventListener('click', closeLightbox);
+        document.getElementById('lightbox')?.addEventListener('click', (e) => {
+            if (e.target === document.getElementById('lightbox')) closeLightbox();
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('.nav-links a, .btn-primary[href^="#"], .btn-outline[href^="#"]').forEach(anchor => {
+            const hash = anchor.getAttribute('href');
+            if (hash && hash.startsWith('#')) {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = hash.substring(1);
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', renderGallery);
+    </script>
+</body>
+
+</html>
